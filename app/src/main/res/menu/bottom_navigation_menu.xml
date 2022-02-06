@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/searchFragment"
+        android:title="Search"
+        android:icon="@drawable/ic_search"/>
+
+    <item android:id="@+id/wishListFragment"
+        android:title="Wishlist"
+        android:icon="@drawable/ic_wish_list"/>
+
+    <item android:id="@+id/productsListFragment"
+        android:title="End"
+        android:icon="@drawable/ic_end"/>
+
+    <item android:id="@+id/profileFragment"
+        android:title="Profile"
+        android:icon="@drawable/ic_profile"/>
+
+    <item android:id="@+id/cartFragment"
+        android:title="Cart"
+        android:icon="@drawable/ic_cart"/>
+</menu>

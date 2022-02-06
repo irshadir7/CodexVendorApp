@@ -1,7 +1,7 @@
 #This repository contains a sample app that implements MVI architecture using Kotlin, ViewModel, LiveData, Hilt and etc.
 
-# NYC Artiles
- Smart Dubai Assignment
+# End 
+ END Demo APP
  
 # Tools and Technologies 
 1- Dagger Hilt
@@ -62,3 +62,4 @@ This app uses [***MVI (Model View Intent)***](https://developer.android.com/jetp
 
 #### Sample Screenshot
 
+![WhatsApp Image 2022-02-06 at 12 42 55 AM](https://user-images.githubusercontent.com/57588320/152683184-754352f2-97ac-4a18-b70f-37b569aac226.jpeg)

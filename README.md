@@ -54,12 +54,6 @@ to test and realease different versions
 
 
 
-## Architecture 🗼
-This app uses [***MVI (Model View Intent)***](https://developer.android.com/jetpack/docs/guide#recommended-app-arch) architecture.
-
-![](https://github.com/TheCodeMonks/Notes-App/blob/master/screenshots/ANDROID%20ROOM%20DB%20DIAGRAM.jpg)
-
-
 #### Sample Screenshot
 
 ![WhatsApp Image 2022-02-06 at 12 42 55 AM](https://user-images.githubusercontent.com/57588320/152683184-754352f2-97ac-4a18-b70f-37b569aac226.jpeg)

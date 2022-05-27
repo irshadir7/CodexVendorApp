@@ -1,7 +1,7 @@
 #This repository contains a sample app that implements MVI architecture using Kotlin, ViewModel, LiveData, Hilt and etc.
 
-# End 
- END Demo APP
+# Vendor App 
+ Codex Vendor App
  
 # Tools and Technologies 
 1- Dagger Hilt
@@ -41,19 +41,3 @@ to test and realease different versions
 1- import with Android Studio 
 2- Download and Sync Gradle and Click on Run.
 
-## Built With 🛠
-- [Kotlin](https://kotlinlang.org/) - First class and official programming language for Android development.
-- [Coroutines](https://kotlinlang.org/docs/reference/coroutines-overview.html) - For asynchronous and more..
-- [Android Architecture Components](https://developer.android.com/topic/libraries/architecture) - Collection of libraries that help you design robust, testable, and maintainable apps.
-    - [Stateflow](https://developer.android.com/kotlin/flow/stateflow-and-sharedflow) - StateFlow is a state-holder observable flow that emits the current and new state updates to its collectors.
-    - [Flow](https://kotlinlang.org/docs/reference/coroutines/flow.html) - A flow is an asynchronous version of a Sequence, a type of collection whose values are lazily produced.
-    - [ViewModel](https://developer.android.com/topic/libraries/architecture/viewmodel) - Stores UI-related data that isn't destroyed on UI changes.
-    - [Jetpack Navigation](https://developer.android.com/guide/navigation) - Navigation refers to the interactions that allow users to navigate across, into, and back out from the different pieces of content within your app
-- [Material Components for Android](https://github.com/material-components/material-components-android) - Modular and customizable Material Design UI components for Android.
-- [Figma](https://figma.com/) - Figma is a vector graphics editor and prototyping tool which is primarily web-based.
-
-
-
-#### Sample Screenshot
-
-![WhatsApp Image 2022-02-06 at 12 42 55 AM](https://user-images.githubusercontent.com/57588320/152683184-754352f2-97ac-4a18-b70f-37b569aac226.jpeg)

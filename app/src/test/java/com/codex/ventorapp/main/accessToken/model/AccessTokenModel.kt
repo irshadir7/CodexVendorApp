@@ -1,4 +1,4 @@
-package com.invex.ventorapp.main.accessToken.model
+package com.codex.ventorapp.main.accessToken.model
 
 data class AccessTokenModel(
     val access_token: String,

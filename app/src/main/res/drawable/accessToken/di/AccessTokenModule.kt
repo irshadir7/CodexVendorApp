@@ -1,9 +1,9 @@
 package com.demo.ventorapp.main.accessToken.di
 
 
-import com.invex.ventorapp.main.accessToken.network.AccessTokenApi
-import com.invex.ventorapp.main.accessToken.repository.AccessTokenRepo
-import com.invex.ventorapp.main.accessToken.vm.AccessTokenViewModel
+import com.codex.ventorapp.main.accessToken.network.AccessTokenApi
+import com.codex.ventorapp.main.accessToken.repository.AccessTokenRepo
+import com.codex.ventorapp.main.accessToken.vm.AccessTokenViewModel
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

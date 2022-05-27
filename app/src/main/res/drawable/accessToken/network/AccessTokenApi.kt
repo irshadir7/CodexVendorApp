@@ -1,8 +1,7 @@
-package com.invex.ventorapp.main.accessToken.network
+package com.codex.ventorapp.main.accessToken.network
 
 
-import com.google.gson.JsonObject
-import com.invex.ventorapp.main.accessToken.model.AccessTokenModel
+import com.codex.ventorapp.main.accessToken.model.AccessTokenModel
 import retrofit2.http.*
 
 interface AccessTokenApi {

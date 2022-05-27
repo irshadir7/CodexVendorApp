@@ -6,26 +6,26 @@
     app:startDestination="@id/productsListFragment">
     <fragment
         android:id="@+id/searchFragment"
-        android:name="com.demo.end.main.ui.SearchFragment"
+        android:name="com.demo.ventorapp.main.ui.SearchFragment"
         android:label="Search"
         tools:layout="@layout/search_fragment" />
     <fragment
         android:id="@+id/wishListFragment"
-        android:name="com.demo.end.main.ui.WishListFragment"
+        android:name="com.demo.ventorapp.main.ui.WishListFragment"
         android:label="Wish List"
         tools:layout="@layout/wish_list_fragment" />
     <fragment
         android:id="@+id/cartFragment"
-        android:name="com.demo.end.main.ui.CartFragment"
+        android:name="com.demo.ventorapp.main.ui.CartFragment"
         android:label="Cart"
         tools:layout="@layout/product_detail_fragment" />
     <fragment
         android:id="@+id/profileFragment"
-        android:name="com.demo.end.main.ui.ProfileFragment"
+        android:name="com.demo.ventorapp.main.ui.ProfileFragment"
         android:label="Profile"
         tools:layout="@layout/profile_fragment" />
     <fragment
         android:id="@+id/productsListFragment"
-        android:name="com.demo.end.main.ui.ProductsListFragment"
+        android:name="com.demo.ventorapp.main.ui.ProductsListFragment"
         android:label="End" />
 </navigation>

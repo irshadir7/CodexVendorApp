@@ -10,6 +10,7 @@ import androidx.appcompat.widget.AppCompatImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.codex.ventorapp.R
+import com.codex.ventorapp.main.delivery.ui.DeliveryOrderActivity
 import com.codex.ventorapp.main.model.DataModel
 import com.codex.ventorapp.main.receipt.ui.ReceiptActivity
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -55,6 +56,11 @@ class PhotoAdapter(var context: Context) : RecyclerView.Adapter<PhotoAdapter.Vie
         holder.itemView.setOnClickListener{
             if(data.id==2){
                 val intent = Intent(context, ReceiptActivity::class.java)
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                context.startActivity(intent)
+            }
+            if(data.id==3){
+                val intent = Intent(context, DeliveryOrderActivity::class.java)
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
                 context.startActivity(intent)
             }

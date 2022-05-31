@@ -14,6 +14,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.End">
         <activity
+            android:name=".main.delivery.ui.DeliveryOrderActivity"
+            android:exported="false" />
+        <activity
             android:name=".main.receipt.ui.ReceiptActivity"
             android:exported="false" />
         <activity

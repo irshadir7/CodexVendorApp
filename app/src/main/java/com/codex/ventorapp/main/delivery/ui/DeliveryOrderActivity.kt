@@ -1,4 +1,4 @@
-package com.codex.ventorapp.main.receipt.ui
+package com.codex.ventorapp.main.delivery.ui
 
 import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
@@ -12,9 +12,7 @@ import com.codex.ventorapp.foundatiion.utilz.SessionManager
 import com.codex.ventorapp.main.delivery.intent.DeliveryIntent
 import com.codex.ventorapp.main.delivery.vm.DeliveryViewModel
 import com.codex.ventorapp.main.receipt.adapter.ReceiptListAdapter
-import com.codex.ventorapp.main.receipt.intent.ReceiptIntent
 import com.codex.ventorapp.main.receipt.model.ListPicking
-import com.codex.ventorapp.main.receipt.vm.ReceiptViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_recipt.*
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -27,77 +25,72 @@ import javax.inject.Inject
 @ExperimentalCoroutinesApi
 @InternalCoroutinesApi
 @AndroidEntryPoint
-class ReceiptActivity : AppCompatActivity() {
+class DeliveryOrderActivity : AppCompatActivity() {
     @Inject
-    lateinit var receiptViewModel: ReceiptViewModel
-
-    private lateinit var receiptListAdapter: ReceiptListAdapter
+    lateinit var deliveryViewModel: DeliveryViewModel
     private lateinit var session: SessionManager
+    private lateinit var deliveryListAdapter: ReceiptListAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_recipt)
+        setContentView(R.layout.activity_delivery_order)
         supportActionBar?.hide()
         session = SessionManager(this)
         val user: HashMap<String, String> = session.getUserDetails()
         val partnerId: String = user[SessionManager.PARTNER_ID]!!
         val tokenValue: String = user[SessionManager.USER_TOKEN]!!
-        authReceiptList(partnerId,tokenValue)
+        authDeliveryList(partnerId, tokenValue)
         init()
     }
 
     private fun init() {
-        receiptListAdapter = ReceiptListAdapter(applicationContext)
+        deliveryListAdapter = ReceiptListAdapter(applicationContext)
 
         rvReceiptList.setHasFixedSize(true)
         rvReceiptList.apply {
             layoutManager = LinearLayoutManager(
                 context,
             )
-            adapter = receiptListAdapter
+            adapter = deliveryListAdapter
         }
 
     }
-//Todo
-    private fun authReceiptList(partnerId: String, tokenValue: String) {
+
+    private fun authDeliveryList(partnerId: String, tokenValue: String) {
         lifecycleScope.launch {
-            receiptViewModel.userIntent.send(
-                ReceiptIntent.GetReceipt(
+            deliveryViewModel.userIntent.send(
+                DeliveryIntent.GetDelivery(
                     tokenValue,
                     "7",
                 )
             )
         }
 
-        subscribeObservers()
+        subscribeObserversDelivery()
     }
 
     @SuppressLint("NotifyDataSetChanged")
-    private fun subscribeObservers() {
-        receiptViewModel.receiptDataRead.observe(
+    private fun subscribeObserversDelivery() {
+        deliveryViewModel.deliveryDataRead.observe(
             this
-        ) { receiptDataRead ->
-            when (receiptDataRead) {
+        ) { deliveryDataRead ->
+            when (deliveryDataRead) {
                 is DataState.Success<ListPicking> -> {
-                    Log.d("ReceiptList", receiptDataRead.data.toString())
-                    receiptViewModel.receiptDataRead.removeObservers(this)
-                    receiptListAdapter.setDataList(receiptDataRead.data.result)
-                    receiptListAdapter.notifyDataSetChanged()
+                    Log.d("DeliveryList", deliveryDataRead.data.toString())
+                    deliveryViewModel.deliveryDataRead.removeObservers(this)
+                    deliveryListAdapter.setDataList(deliveryDataRead.data.result)
+                    deliveryListAdapter.notifyDataSetChanged()
                 }
                 is DataState.Error -> {
-                    Log.d("ReceiptList", receiptDataRead.exception.toString())
-                    receiptViewModel.receiptDataRead.removeObservers(this)
+                    Log.d("DeliveryList", deliveryDataRead.exception.toString())
+                    deliveryViewModel.deliveryDataRead.removeObservers(this)
                 }
                 is DataState.Loading -> {
 
                 }
                 else -> {
-
-                    receiptViewModel.receiptDataRead.removeObservers(this)
+                    deliveryViewModel.deliveryDataRead.removeObservers(this)
                 }
             }
         }
     }
-
-
-
 }

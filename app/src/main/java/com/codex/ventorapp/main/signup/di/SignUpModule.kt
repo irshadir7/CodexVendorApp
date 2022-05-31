@@ -1,8 +1,8 @@
-package com.codex.ventorapp.main.login.di
+package com.codex.ventorapp.main.signup.di
 
-import com.codex.ventorapp.main.login.network.LoginApi
-import com.codex.ventorapp.main.login.repository.LoginRepo
-import com.codex.ventorapp.main.login.vm.LoginViewModel
+import com.codex.ventorapp.main.signup.network.SignupApi
+import com.codex.ventorapp.main.signup.repository.SignupRepo
+import com.codex.ventorapp.main.signup.vm.SignUpViewModel
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -18,27 +18,27 @@ import javax.inject.Singleton
 @InternalCoroutinesApi
 @Module
 @InstallIn(SingletonComponent::class)
-object LoginModule {
+object SignUpModule {
     @Singleton
     @Provides
-    fun provideMainApi(retrofit: Retrofit.Builder): LoginApi {
+    fun provideMainApi(retrofit: Retrofit.Builder): SignupApi {
         return retrofit.build()
-            .create(LoginApi::class.java)
+            .create(SignupApi::class.java)
     }
 
     @Singleton
     @Provides
     fun provideMainRepo(
-        accessTokenApi: LoginApi
-    ): LoginRepo {
-        return LoginRepo(accessTokenApi)
+        signUpApi: SignupApi
+    ): SignupRepo {
+        return SignupRepo(signUpApi)
     }
 
     @Singleton
     @Provides
-    fun provideLoginViewModel(
-        loginRepo: LoginRepo
-    ): LoginViewModel {
-        return LoginViewModel(loginRepo)
+    fun provideSignUpViewModel(
+        signupRepo: SignupRepo
+    ): SignUpViewModel {
+        return SignUpViewModel(signupRepo)
     }
 }

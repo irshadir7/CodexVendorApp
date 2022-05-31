@@ -1,8 +1,8 @@
-package com.codex.ventorapp.main.login.di
+package com.codex.ventorapp.main.receipt.di
 
-import com.codex.ventorapp.main.login.network.LoginApi
-import com.codex.ventorapp.main.login.repository.LoginRepo
-import com.codex.ventorapp.main.login.vm.LoginViewModel
+import com.codex.ventorapp.main.receipt.network.ReceiptApi
+import com.codex.ventorapp.main.receipt.repository.ReceiptRepo
+import com.codex.ventorapp.main.receipt.vm.ReceiptViewModel
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -13,32 +13,34 @@ import kotlinx.coroutines.InternalCoroutinesApi
 import retrofit2.Retrofit
 import javax.inject.Singleton
 
+
 @FlowPreview
 @ExperimentalCoroutinesApi
 @InternalCoroutinesApi
 @Module
 @InstallIn(SingletonComponent::class)
-object LoginModule {
+object ReceiptModule {
     @Singleton
     @Provides
-    fun provideMainApi(retrofit: Retrofit.Builder): LoginApi {
+    fun provideMainApi(retrofit: Retrofit.Builder): ReceiptApi {
         return retrofit.build()
-            .create(LoginApi::class.java)
+            .create(ReceiptApi::class.java)
     }
 
     @Singleton
     @Provides
     fun provideMainRepo(
-        accessTokenApi: LoginApi
-    ): LoginRepo {
-        return LoginRepo(accessTokenApi)
+        receiptApi: ReceiptApi
+    ): ReceiptRepo {
+        return ReceiptRepo(receiptApi)
     }
 
     @Singleton
     @Provides
-    fun provideLoginViewModel(
-        loginRepo: LoginRepo
-    ): LoginViewModel {
-        return LoginViewModel(loginRepo)
+    fun provideSignUpViewModel(
+        receiptRepo: ReceiptRepo
+    ): ReceiptViewModel {
+        return ReceiptViewModel(receiptRepo)
+
     }
 }

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/_10sdp"
+    app:cardCornerRadius="@dimen/_4sdp"
+    app:cardElevation="@dimen/_4sdp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="@dimen/_6sdp">
+
+            <TextView
+                android:id="@+id/tvName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_2sdp"
+                android:text="05 May 2021"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_18sdp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawablePadding="@dimen/_5sdp"
+                android:paddingStart="@dimen/_12sdp"
+                android:text="Ready"
+                android:textColor="@android:color/holo_green_dark"
+                android:textSize="@dimen/_10sdp"
+                tools:ignore="RtlSymmetry" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1sdp"
+            android:alpha=".10"
+            android:background="@color/black">
+
+        </View>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/_6sdp">
+
+            <TextView
+                android:id="@+id/tvDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawablePadding="@dimen/_5sdp"
+                android:padding="@dimen/_2sdp"
+                android:text="05 May 2021"
+                android:textColor="@color/icon_color"
+                android:textSize="@dimen/_12sdp"
+                app:drawableStartCompat="@drawable/baseline_calendar_today"
+                app:drawableTint="@color/icon_color" />
+
+            <TextView
+                android:id="@+id/tvSupplier"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawablePadding="@dimen/_5sdp"
+                android:padding="@dimen/_2sdp"
+                android:text="05 May 2021"
+                android:textColor="@color/icon_color"
+                android:textSize="@dimen/_12sdp"
+                app:drawableStartCompat="@drawable/baseline_receipt"
+                app:drawableTint="@color/icon_color" />
+
+            <TextView
+                android:id="@+id/tvStock"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawablePadding="@dimen/_5sdp"
+                android:padding="@dimen/_2sdp"
+                android:text="05 May 2021"
+                android:textColor="@color/icon_color"
+                android:textSize="@dimen/_12sdp"
+                app:drawableStartCompat="@drawable/ic_login_black"
+                app:drawableTint="@color/icon_color" />
+
+            <TextView
+                android:id="@+id/txtLPO"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawablePadding="@dimen/_5sdp"
+                android:padding="@dimen/_2sdp"
+                android:text="05 May 2021"
+                android:textColor="@color/icon_color"
+                android:textSize="@dimen/_12sdp"
+                app:drawableStartCompat="@drawable/outline_info"
+                app:drawableTint="@color/icon_color" />
+
+            <TextView
+                android:id="@+id/txtAdmin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawablePadding="@dimen/_5sdp"
+                android:padding="@dimen/_2sdp"
+                android:text="05 May 2021"
+                android:textColor="@color/icon_color"
+                android:textSize="@dimen/_12sdp"
+                app:drawableStartCompat="@drawable/outline_account_circle"
+                app:drawableTint="@color/icon_color" />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

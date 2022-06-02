@@ -2,4 +2,6 @@
     <string name="app_name">Vendor App</string>
     <string name="receipts">Receipts</string>
     <string name="shop_stock">Shop Stock</string>
+    <string name="delivery_orders">Delivery Orders</string>
+    <string name="return_orders">Return Orders</string>
 </resources>

@@ -13,6 +13,7 @@ import com.codex.ventorapp.R
 import com.codex.ventorapp.main.delivery.ui.DeliveryOrderActivity
 import com.codex.ventorapp.main.model.DataModel
 import com.codex.ventorapp.main.receipt.ui.ReceiptActivity
+import com.codex.ventorapp.main.returns.ui.ReturnActivity
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.FlowPreview
 import kotlinx.coroutines.InternalCoroutinesApi
@@ -61,6 +62,11 @@ class PhotoAdapter(var context: Context) : RecyclerView.Adapter<PhotoAdapter.Vie
             }
             if(data.id==3){
                 val intent = Intent(context, DeliveryOrderActivity::class.java)
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                context.startActivity(intent)
+            }
+            if(data.id==4){
+                val intent = Intent(context, ReturnActivity::class.java)
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
                 context.startActivity(intent)
             }

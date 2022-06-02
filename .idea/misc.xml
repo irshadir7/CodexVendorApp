@@ -34,8 +34,11 @@
         <entry key="..\:/Users/mpirs/StudioProjects/VentorApp/app/src/main/res/layout/activity_delivery_order.xml" value="0.26979166666666665" />
         <entry key="..\:/Users/mpirs/StudioProjects/VentorApp/app/src/main/res/layout/activity_main.xml" value="0.26979166666666665" />
         <entry key="..\:/Users/mpirs/StudioProjects/VentorApp/app/src/main/res/layout/activity_recipt.xml" value="0.26979166666666665" />
+        <entry key="..\:/Users/mpirs/StudioProjects/VentorApp/app/src/main/res/layout/activity_return.xml" value="0.2557291666666667" />
+        <entry key="..\:/Users/mpirs/StudioProjects/VentorApp/app/src/main/res/layout/delivery_toolbar.xml" value="0.26979166666666665" />
         <entry key="..\:/Users/mpirs/StudioProjects/VentorApp/app/src/main/res/layout/receipt_item_list.xml" value="0.26979166666666665" />
         <entry key="..\:/Users/mpirs/StudioProjects/VentorApp/app/src/main/res/layout/receipt_toolbar.xml" value="0.26979166666666665" />
+        <entry key="..\:/Users/mpirs/StudioProjects/VentorApp/app/src/main/res/layout/return_toolbar.xml" value="0.26979166666666665" />
       </map>
     </option>
   </component>

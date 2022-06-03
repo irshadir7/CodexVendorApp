@@ -31,14 +31,19 @@
         <entry key="..\:/Users/mpirs/StudioProjects/VentorApp/app/src/main/res/drawable/ic_login_black.xml" value="0.164" />
         <entry key="..\:/Users/mpirs/StudioProjects/VentorApp/app/src/main/res/drawable/outline_account_circle.xml" value="0.164" />
         <entry key="..\:/Users/mpirs/StudioProjects/VentorApp/app/src/main/res/drawable/outline_info.xml" value="0.1" />
+        <entry key="..\:/Users/mpirs/StudioProjects/VentorApp/app/src/main/res/drawable/outline_place.xml" value="0.122" />
+        <entry key="..\:/Users/mpirs/StudioProjects/VentorApp/app/src/main/res/drawable/oval_shape.xml" value="0.1645" />
         <entry key="..\:/Users/mpirs/StudioProjects/VentorApp/app/src/main/res/layout/activity_delivery_order.xml" value="0.26979166666666665" />
+        <entry key="..\:/Users/mpirs/StudioProjects/VentorApp/app/src/main/res/layout/activity_inventory_adjustment.xml" value="0.2557291666666667" />
         <entry key="..\:/Users/mpirs/StudioProjects/VentorApp/app/src/main/res/layout/activity_main.xml" value="0.26979166666666665" />
         <entry key="..\:/Users/mpirs/StudioProjects/VentorApp/app/src/main/res/layout/activity_recipt.xml" value="0.26979166666666665" />
         <entry key="..\:/Users/mpirs/StudioProjects/VentorApp/app/src/main/res/layout/activity_return.xml" value="0.2557291666666667" />
         <entry key="..\:/Users/mpirs/StudioProjects/VentorApp/app/src/main/res/layout/delivery_toolbar.xml" value="0.26979166666666665" />
+        <entry key="..\:/Users/mpirs/StudioProjects/VentorApp/app/src/main/res/layout/inventory_item_list.xml" value="0.26979166666666665" />
         <entry key="..\:/Users/mpirs/StudioProjects/VentorApp/app/src/main/res/layout/receipt_item_list.xml" value="0.26979166666666665" />
         <entry key="..\:/Users/mpirs/StudioProjects/VentorApp/app/src/main/res/layout/receipt_toolbar.xml" value="0.26979166666666665" />
         <entry key="..\:/Users/mpirs/StudioProjects/VentorApp/app/src/main/res/layout/return_toolbar.xml" value="0.26979166666666665" />
+        <entry key="..\:/Users/mpirs/StudioProjects/VentorApp/app/src/main/res/layout/toolbar_inventory.xml" value="0.26979166666666665" />
       </map>
     </option>
   </component>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/menuToolbar"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="0dp"
+    android:background="@color/icon_color"
+    android:contentInsetStart="10dp"
+    android:contentInsetLeft="10dp"
+    android:contentInsetRight="10dp"
+    android:minHeight="?attr/actionBarSize"
+    android:padding="0dp"
+    app:contentInsetLeft="10dp"
+    app:contentInsetRight="10dp"
+    app:contentInsetStart="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/inventory_adjustment"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_15sdp"
+                android:textStyle="bold">
+
+            </TextView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="end"
+            android:orientation="horizontal">
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/_5sdp"
+                android:src="@drawable/baseline_search">
+
+            </androidx.appcompat.widget.AppCompatImageView>
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+</androidx.appcompat.widget.Toolbar>

@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/_10sdp"
+    app:cardCornerRadius="@dimen/_4sdp"
+    app:cardElevation="@dimen/_4sdp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="@dimen/_6sdp">
+
+            <TextView
+                android:id="@+id/product_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_2sdp"
+                android:text="05 May 2021"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_16sdp"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_1sdp"
+            android:alpha=".10"
+            android:background="@color/black">
+
+        </View>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="@dimen/_6sdp"
+            android:weightSum="2">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:padding="@dimen/_6sdp">
+
+                <TextView
+                    android:id="@+id/inventory_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="@dimen/_5sdp"
+                    android:gravity="bottom"
+                    android:padding="@dimen/_2sdp"
+                    android:text="05 May 2021"
+                    android:textColor="@color/icon_color"
+                    android:textSize="@dimen/_10sdp"
+                    app:drawableStartCompat="@drawable/baseline_calendar_today"
+                    app:drawableTint="@color/icon_color" />
+
+                <TextView
+                    android:id="@+id/location"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="@dimen/_5sdp"
+                    android:gravity="bottom"
+                    android:padding="@dimen/_2sdp"
+                    android:text="05 May 2021"
+                    android:textColor="@color/icon_color"
+                    android:textSize="@dimen/_10sdp"
+                    app:drawableStartCompat="@drawable/outline_place"
+                    app:drawableTint="@color/icon_color" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:padding="@dimen/_6sdp">
+
+                <TextView
+                    android:id="@+id/onhand_quantity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="@dimen/_5sdp"
+                    android:padding="@dimen/_2sdp"
+                    android:text="On hand Quantity"
+                    android:textColor="@color/icon_color"
+                    android:textSize="@dimen/_10sdp" />
+
+                <TextView
+                    android:id="@+id/inventory_quantity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="@dimen/_5sdp"
+                    android:padding="@dimen/_2sdp"
+                    android:text="Available Quantity"
+                    android:textColor="@color/icon_color"
+                    android:textSize="@dimen/_10sdp" />
+
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_10sdp"
+            android:layout_gravity="end"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/ivMinus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="@color/white"
+                android:layout_margin="@dimen/_5sdp"
+                android:textSize="@dimen/_12sdp"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:text="-"
+                android:textStyle="bold"
+                android:backgroundTint="@color/cardview_dark_background"
+                android:background="@drawable/oval_shape"
+                />
+
+            <TextView
+                android:id="@+id/tvCount"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:layout_margin="@dimen/_5sdp"
+                android:text="0"
+                android:layout_gravity="center"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12sdp"
+               />
+
+            <TextView
+                android:id="@+id/ivPlus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="@dimen/_12sdp"
+                android:layout_margin="@dimen/_5sdp"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:background="@drawable/oval_shape"
+                android:text="+"
+                />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

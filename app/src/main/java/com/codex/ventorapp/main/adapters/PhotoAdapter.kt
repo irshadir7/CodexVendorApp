@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.codex.ventorapp.R
 import com.codex.ventorapp.main.delivery.ui.DeliveryOrderActivity
+import com.codex.ventorapp.main.inventory_adjustment.ui.InventoryAdjustmentActivity
 import com.codex.ventorapp.main.model.DataModel
 import com.codex.ventorapp.main.receipt.ui.ReceiptActivity
 import com.codex.ventorapp.main.returns.ui.ReturnActivity
@@ -67,6 +68,11 @@ class PhotoAdapter(var context: Context) : RecyclerView.Adapter<PhotoAdapter.Vie
             }
             if(data.id==4){
                 val intent = Intent(context, ReturnActivity::class.java)
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                context.startActivity(intent)
+            }
+            if(data.id==11){
+                val intent = Intent(context, InventoryAdjustmentActivity::class.java)
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
                 context.startActivity(intent)
             }

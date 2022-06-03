@@ -14,6 +14,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.End">
         <activity
+            android:name=".main.inventory_adjustment.ui.InventoryAdjustmentActivity"
+            android:exported="false" />
+        <activity
             android:name=".main.returns.ui.ReturnActivity"
             android:exported="false" />
         <activity

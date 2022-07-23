@@ -62,10 +62,10 @@
                 android:drawablePadding="@dimen/_5sdp"
                 android:padding="@dimen/_2sdp"
                 android:text="05 May 2021"
-                android:textColor="@color/icon_color"
+                android:textColor="@color/dark_blue"
                 android:textSize="@dimen/_12sdp"
                 app:drawableStartCompat="@drawable/baseline_calendar_today"
-                app:drawableTint="@color/icon_color" />
+                app:drawableTint="@color/dark_blue" />
 
             <TextView
                 android:id="@+id/tvSupplier"
@@ -74,10 +74,10 @@
                 android:drawablePadding="@dimen/_5sdp"
                 android:padding="@dimen/_2sdp"
                 android:text="05 May 2021"
-                android:textColor="@color/icon_color"
+                android:textColor="@color/dark_blue"
                 android:textSize="@dimen/_12sdp"
                 app:drawableStartCompat="@drawable/baseline_receipt"
-                app:drawableTint="@color/icon_color" />
+                app:drawableTint="@color/dark_blue" />
 
             <TextView
                 android:id="@+id/tvStock"
@@ -86,10 +86,10 @@
                 android:drawablePadding="@dimen/_5sdp"
                 android:padding="@dimen/_2sdp"
                 android:text="05 May 2021"
-                android:textColor="@color/icon_color"
+                android:textColor="@color/dark_blue"
                 android:textSize="@dimen/_12sdp"
                 app:drawableStartCompat="@drawable/ic_login_black"
-                app:drawableTint="@color/icon_color" />
+                app:drawableTint="@color/dark_blue" />
 
             <TextView
                 android:id="@+id/txtLPO"
@@ -98,10 +98,10 @@
                 android:drawablePadding="@dimen/_5sdp"
                 android:padding="@dimen/_2sdp"
                 android:text="05 May 2021"
-                android:textColor="@color/icon_color"
+                android:textColor="@color/dark_blue"
                 android:textSize="@dimen/_12sdp"
                 app:drawableStartCompat="@drawable/outline_info"
-                app:drawableTint="@color/icon_color" />
+                app:drawableTint="@color/dark_blue" />
 
             <TextView
                 android:id="@+id/txtAdmin"
@@ -110,10 +110,10 @@
                 android:drawablePadding="@dimen/_5sdp"
                 android:padding="@dimen/_2sdp"
                 android:text="05 May 2021"
-                android:textColor="@color/icon_color"
+                android:textColor="@color/dark_blue"
                 android:textSize="@dimen/_12sdp"
                 app:drawableStartCompat="@drawable/outline_account_circle"
-                app:drawableTint="@color/icon_color" />
+                app:drawableTint="@color/dark_blue" />
         </LinearLayout>
     </LinearLayout>
 </androidx.cardview.widget.CardView>

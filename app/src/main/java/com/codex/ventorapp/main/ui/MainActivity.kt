@@ -2,6 +2,10 @@ package com.codex.ventorapp.main.ui
 
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
+import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.core.view.GravityCompat
+import androidx.drawerlayout.widget.DrawerLayout
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.GridLayoutManager
 import com.codex.ventorapp.R
@@ -21,6 +25,7 @@ import com.codex.ventorapp.main.model.DataModel
 import com.codex.ventorapp.main.signup.intent.SignUpIntent
 import com.codex.ventorapp.main.signup.model.SignupSuccessModel
 import com.codex.ventorapp.main.signup.vm.SignUpViewModel
+import com.google.android.material.navigation.NavigationView
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -45,12 +50,60 @@ class MainActivity : BaseActivity() {
     private var dataList = mutableListOf<DataModel>()
     private lateinit var photoAdapter: PhotoAdapter
     private lateinit var session: SessionManager
+    private lateinit var drawerLayout: DrawerLayout
+    private lateinit var actionBarToggle: ActionBarDrawerToggle
+    private lateinit var navView: NavigationView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         session = SessionManager(this)
         init()
+
+        drawerLayout = findViewById(R.id.drawer_layout)
+
+        // Pass the ActionBarToggle action into the drawerListener
+        actionBarToggle = ActionBarDrawerToggle(this, drawerLayout, 0, 0)
+        drawerLayout.addDrawerListener(actionBarToggle)
+
+        // Display the hamburger icon to launch the drawer
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
+
+        // Call syncState() on the action bar so it'll automatically change to the back button when the drawer layout is open
+        actionBarToggle.syncState()
+
+
+        // Call findViewById on the NavigationView
+        navView = findViewById(R.id.navView)
+
+        // Call setNavigationItemSelectedListener on the NavigationView to detect when items are clicked
+        navView.setNavigationItemSelectedListener { menuItem ->
+            when (menuItem.itemId) {
+                R.id.feedback -> {
+                    Toast.makeText(this, "My feedback", Toast.LENGTH_SHORT).show()
+                    true
+                }
+                R.id.settings -> {
+                    Toast.makeText(this, "Settings", Toast.LENGTH_SHORT).show()
+                    true
+                }
+                R.id.about -> {
+                    Toast.makeText(this, "About", Toast.LENGTH_SHORT).show()
+                    true
+                }
+                R.id.logout -> {
+                    Toast.makeText(this, "Logout", Toast.LENGTH_SHORT).show()
+                    true
+                }
+                else -> {
+                    false
+                }
+            }
+        }
+
+        drawerLayout.isFocusableInTouchMode = false
     }
+
 
     private fun init() {
         photoAdapter = PhotoAdapter(applicationContext)
@@ -59,7 +112,7 @@ class MainActivity : BaseActivity() {
         recyclerview.apply {
             layoutManager = GridLayoutManager(
                 context,
-                4
+                3
             )
             adapter = photoAdapter
         }
@@ -70,10 +123,10 @@ class MainActivity : BaseActivity() {
 
     private fun prepareItems() {
         dataList.add(DataModel(1, "Warehouse Operation", R.drawable.page_wh__state_default))
-        dataList.add(DataModel(2, "Receipts", R.drawable.page_about__state_default))
-        dataList.add(DataModel(3, "Delivery Orders", R.drawable.page_about__state_default))
-        dataList.add(DataModel(4, "Returns", R.drawable.page_about__state_default))
-        dataList.add(DataModel(5, "POS Orders", R.drawable.page_about__state_default))
+        dataList.add(DataModel(2, "Receipts", R.drawable.page_wh__state_default))
+        dataList.add(DataModel(3, "Delivery Orders", R.drawable.page_wh__state_default))
+        dataList.add(DataModel(4, "Returns", R.drawable.page_wh__state_default))
+        dataList.add(DataModel(5, "POS Orders", R.drawable.page_wh__state_default))
         dataList.add(DataModel(6, "Batch picking", R.drawable.page_batch__state_default))
         dataList.add(DataModel(7, "Internal transfers", R.drawable.page_internal__state_default))
         dataList.add(DataModel(8, "Quick info", R.drawable.page_quick__state_default))
@@ -90,10 +143,6 @@ class MainActivity : BaseActivity() {
         dataList.add(DataModel(13, "MO and WO management", R.drawable.page_manufacturing))
         dataList.add(DataModel(14, "Create SO", R.drawable.page_sales__state_default))
         dataList.add(DataModel(15, "Create PO", R.drawable.page_purchase__state_default))
-        dataList.add(DataModel(16, "Leave feedback", R.drawable.page_feedback__state_default))
-        dataList.add(DataModel(17, "Settings", R.drawable.page_setting__state_default))
-        dataList.add(DataModel(18, "About", R.drawable.page_about__state_default))
-        dataList.add(DataModel(19, "Logout", R.drawable.page_logout__state_default))
         photoAdapter.setDataList(dataList)
     }
 
@@ -221,4 +270,20 @@ class MainActivity : BaseActivity() {
             }
         }
     }
+
+    // override the onSupportNavigateUp() function to launch the Drawer when the hamburger icon is clicked
+    override fun onSupportNavigateUp(): Boolean {
+        if (this.drawerLayout.isDrawerOpen(GravityCompat.START)) {
+            this.drawerLayout.closeDrawer(GravityCompat.START)
+        } else {
+            drawerLayout.openDrawer(navView)
+        }
+        return true
+    }
+
+    // override the onBackPressed() function to close the Drawer when the back button is clicked
+    override fun onBackPressed() {
+        super.onBackPressed()
+    }
+
 }

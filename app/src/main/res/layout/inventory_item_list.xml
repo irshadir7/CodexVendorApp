@@ -63,10 +63,10 @@
                     android:gravity="bottom"
                     android:padding="@dimen/_2sdp"
                     android:text="05 May 2021"
-                    android:textColor="@color/icon_color"
+                    android:textColor="@color/dark_blue"
                     android:textSize="@dimen/_10sdp"
                     app:drawableStartCompat="@drawable/baseline_calendar_today"
-                    app:drawableTint="@color/icon_color" />
+                    app:drawableTint="@color/dark_blue" />
 
                 <TextView
                     android:id="@+id/location"
@@ -76,10 +76,10 @@
                     android:gravity="bottom"
                     android:padding="@dimen/_2sdp"
                     android:text="05 May 2021"
-                    android:textColor="@color/icon_color"
+                    android:textColor="@color/dark_blue"
                     android:textSize="@dimen/_10sdp"
                     app:drawableStartCompat="@drawable/outline_place"
-                    app:drawableTint="@color/icon_color" />
+                    app:drawableTint="@color/dark_blue" />
 
 
             </LinearLayout>
@@ -99,7 +99,7 @@
                     android:drawablePadding="@dimen/_5sdp"
                     android:padding="@dimen/_2sdp"
                     android:text="On hand Quantity"
-                    android:textColor="@color/icon_color"
+                    android:textColor="@color/dark_blue"
                     android:textSize="@dimen/_10sdp" />
 
                 <TextView
@@ -109,7 +109,7 @@
                     android:drawablePadding="@dimen/_5sdp"
                     android:padding="@dimen/_2sdp"
                     android:text="Available Quantity"
-                    android:textColor="@color/icon_color"
+                    android:textColor="@color/dark_blue"
                     android:textSize="@dimen/_10sdp" />
 
 
@@ -119,8 +119,8 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/_10sdp"
             android:layout_gravity="end"
+            android:layout_margin="@dimen/_10sdp"
             android:gravity="center_horizontal"
             android:orientation="horizontal">
 
@@ -128,46 +128,44 @@
                 android:id="@+id/ivMinus"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:textColor="@color/white"
-                android:layout_margin="@dimen/_5sdp"
-                android:textSize="@dimen/_12sdp"
-                android:gravity="center"
                 android:layout_gravity="center"
-                android:text="-"
-                android:textStyle="bold"
-                android:backgroundTint="@color/cardview_dark_background"
+                android:layout_margin="@dimen/_5sdp"
+                android:layout_weight="1"
                 android:background="@drawable/oval_shape"
-                />
+                android:backgroundTint="@color/cardview_dark_background"
+                android:gravity="center"
+                android:text="-"
+                android:textColor="@color/dark_blue"
+                android:textSize="@dimen/_12sdp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/tvCount"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/_5sdp"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:layout_margin="@dimen/_5sdp"
                 android:text="0"
-                android:layout_gravity="center"
-                android:textStyle="bold"
                 android:textColor="@color/black"
                 android:textSize="@dimen/_12sdp"
-               />
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/ivPlus"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:textSize="@dimen/_12sdp"
-                android:layout_margin="@dimen/_5sdp"
-                android:gravity="center"
                 android:layout_gravity="center"
-                android:textStyle="bold"
-                android:textColor="@color/white"
+                android:layout_margin="@dimen/_5sdp"
+                android:layout_weight="1"
                 android:background="@drawable/oval_shape"
+                android:backgroundTint="@color/dark_blue"
+                android:gravity="center"
                 android:text="+"
-                />
+                android:textColor="@color/white"
+                android:textSize="@dimen/_12sdp"
+                android:textStyle="bold" />
         </LinearLayout>
     </LinearLayout>
 </androidx.cardview.widget.CardView>

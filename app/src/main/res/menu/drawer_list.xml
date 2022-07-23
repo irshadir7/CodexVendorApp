@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/feedback"
+        android:icon="@drawable/page_feedback__state_default"
+        android:title="Leave feedback" />
+    <item
+        android:id="@+id/settings"
+        android:icon="@drawable/page_setting__state_default"
+        android:title="Settings" />
+    <item
+        android:id="@+id/about"
+        android:icon="@drawable/page_about__state_default"
+        android:title="About" />
+    <item
+        android:id="@+id/logout"
+        android:icon="@drawable/page_logout__state_default"
+        android:title="Logout" />
+</menu>

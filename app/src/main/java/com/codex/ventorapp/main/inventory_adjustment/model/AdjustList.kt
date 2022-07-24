@@ -8,6 +8,7 @@ data class AdjustList(
 )
 
 data class ResultAdjustment(
+    val barcode:String,
     val difference: Double,
     val id: Int,
     val inventory_date: String,

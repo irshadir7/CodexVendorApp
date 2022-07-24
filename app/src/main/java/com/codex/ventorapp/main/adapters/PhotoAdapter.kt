@@ -13,6 +13,7 @@ import com.codex.ventorapp.R
 import com.codex.ventorapp.main.delivery.ui.DeliveryOrderActivity
 import com.codex.ventorapp.main.inventory_adjustment.ui.InventoryAdjustmentActivity
 import com.codex.ventorapp.main.model.DataModel
+import com.codex.ventorapp.main.purchase.ui.PurchaseActivity
 import com.codex.ventorapp.main.receipt.ui.ReceiptActivity
 import com.codex.ventorapp.main.returns.ui.ReturnActivity
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -56,6 +57,11 @@ class PhotoAdapter(var context: Context) : RecyclerView.Adapter<PhotoAdapter.Vie
             .into(holder.image)
 
         holder.itemView.setOnClickListener{
+            if(data.id==1){
+                val intent = Intent(context, PurchaseActivity::class.java)
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                context.startActivity(intent)
+            }
             if(data.id==2){
                 val intent = Intent(context, ReceiptActivity::class.java)
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)

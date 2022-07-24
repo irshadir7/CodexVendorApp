@@ -15,8 +15,9 @@
         android:id="@+id/rvReceiptList"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:overScrollMode="never"
-        android:layout_below="@+id/toolbar">
+        android:layout_below="@+id/toolbar"
+        android:background="@color/white"
+        android:overScrollMode="never">
 
     </androidx.recyclerview.widget.RecyclerView>
 

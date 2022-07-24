@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:weightSum="3">
+
+    <TextView
+        android:id="@+id/productName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:layout_weight="1.2"
+        android:maxLines="1"
+        android:gravity="center"
+        android:ellipsize="end"
+        android:background="@drawable/table_content_cell_bg"
+        android:text="Item"
+        android:textSize="@dimen/_12sdp" />
+
+    <TextView
+        android:id="@+id/barcodeNumber"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:layout_weight="1.2"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:background="@drawable/table_content_cell_bg"
+        android:text="Barcode"
+        android:textSize="@dimen/_12sdp" />
+
+    <TextView
+        android:id="@+id/inventoryQuantity"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:layout_weight=".6"
+        android:gravity="center"
+        android:background="@drawable/table_content_cell_bg"
+        android:text="Count"
+        android:textSize="@dimen/_12sdp" />
+
+
+</LinearLayout>

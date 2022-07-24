@@ -46,6 +46,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/_30sdp"
+            app:cardBackgroundColor="@color/white"
             app:layout_constraintBottom_toTopOf="@+id/guideline2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -63,16 +64,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/_100sdp"
                     android:layout_gravity="top"
+                    android:layout_marginBottom="@dimen/_10sdp"
                     android:src="@drawable/ic_codex_logo_file" />
 
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/_10sdp"
-                    android:gravity="center"
-                    android:text="Powered by Codex"
-                    android:textColor="@color/dark_blue"
-                    android:textSize="@dimen/_12sdp" />
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/emailPasswordView"
@@ -96,7 +90,7 @@
                         <com.google.android.material.textfield.TextInputLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="URL / Server IP"
+                            android:hint="Select Database"
                             android:textColorHint="@color/black"
                             app:boxStrokeWidth="0dp"
                             app:boxStrokeWidthFocused="0dp"
@@ -261,6 +255,27 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvPoweredBy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_40sdp"
+        android:gravity="center"
+        android:text="Powered by"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_12sdp"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_20sdp"
+        android:layout_marginBottom="@dimen/_20sdp"
+        android:gravity="center"
+        android:src="@drawable/ic_powered_by"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_12sdp"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

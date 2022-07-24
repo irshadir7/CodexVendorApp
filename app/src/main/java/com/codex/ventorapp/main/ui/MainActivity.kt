@@ -122,7 +122,7 @@ class MainActivity : BaseActivity() {
     }
 
     private fun prepareItems() {
-        dataList.add(DataModel(1, "Warehouse Operation", R.drawable.page_wh__state_default))
+        dataList.add(DataModel(1, "Purchase", R.drawable.page_wh__state_default))
         dataList.add(DataModel(2, "Receipts", R.drawable.page_wh__state_default))
         dataList.add(DataModel(3, "Delivery Orders", R.drawable.page_wh__state_default))
         dataList.add(DataModel(4, "Returns", R.drawable.page_wh__state_default))

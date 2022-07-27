@@ -19,6 +19,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.End">
         <activity
+            android:name=".main.purchase.ui.CreatePurchaseOrderActivity"
+            android:exported="false" />
+        <activity
             android:name=".main.purchase.ui.PurchaseActivity"
             android:exported="false" />
         <activity

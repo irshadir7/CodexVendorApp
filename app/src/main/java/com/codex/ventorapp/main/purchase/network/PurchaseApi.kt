@@ -7,6 +7,9 @@ import retrofit2.http.*
 interface PurchaseApi {
 
 
-    @GET("api/v1/api/list_po")
+    @GET("api/v1/list_po")
     suspend fun getPurchaseList(@Header("Authorization") token: String): JsonObject
+
+    @GET("api/v1/list/customer")
+    suspend fun getAllCustomer(@Header("Authorization") token: String): JsonObject
 }

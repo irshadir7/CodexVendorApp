@@ -11,6 +11,7 @@ import com.codex.ventorapp.main.inventory_adjustment.model.BarCodeList
 import com.codex.ventorapp.main.inventory_adjustment.repository.AdjustmentRepo
 import com.codex.ventorapp.main.model.DataModel
 import com.codex.ventorapp.main.purchase.intent.PurchaseOrderIntent
+import com.codex.ventorapp.main.purchase.model.Customer
 import com.codex.ventorapp.main.purchase.model.PurchaseOrder
 import com.codex.ventorapp.main.purchase.repository.PurchaseRepo
 import kotlinx.coroutines.channels.Channel
@@ -29,6 +30,10 @@ class PurchaseViewModel constructor(
     val purchaseListRead: LiveData<DataState<PurchaseOrder>>
         get() = purchaseListUpdate
 
+    private val customerListUpdate: MutableLiveData<DataState<Customer>> = MutableLiveData()
+    val customerListRead: LiveData<DataState<Customer>>
+        get() = customerListUpdate
+
 
     init {
         handleIntent()
@@ -40,6 +45,7 @@ class PurchaseViewModel constructor(
             userIntent.consumeAsFlow().collect {
                 when (it) {
                     is PurchaseOrderIntent.GetPurchaseOrder -> getPurchaseOrderList(it.token)
+                    is PurchaseOrderIntent.GetCustomerList -> getCustomerList(it.token)
                 }
             }
         }
@@ -55,5 +61,13 @@ class PurchaseViewModel constructor(
 
     }
 
+    private fun getCustomerList(token: String) {
+        viewModelScope.launch {
+            purchaseRepo.getCustomerList(token)
+                .onEach { dataState ->
+                    customerListUpdate.value = dataState
+                }.launchIn(viewModelScope)
+        }
 
+    }
 }

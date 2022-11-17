@@ -49,15 +49,23 @@ class InventoryAdjustmentViewModel constructor(
                         it.id,
                         it.locationId
                     )
-                    is InventoryAdjustmentIntent.GetUpdateInventory -> getInventoryAdjustment(it.token,it.product_id,it.location_id,it.stock_quant_id,it.inventory_quantity)
+                    is InventoryAdjustmentIntent.GetUpdateInventory -> doInventoryAdjustment(it.token,it.product_id,it.location_id,it.stock_quant_id,it.inventory_quantity,it.isPackage,it.packageId)
                 }
             }
         }
     }
 
-    private fun getInventoryAdjustment(token: String, productId: String, locationId: String, stockQuantityId: String, inventoryQuantity: String) {
+    private fun doInventoryAdjustment(
+        token: String,
+        productId: String,
+        locationId: String,
+        stockQuantityId: String,
+        inventoryQuantity: String,
+        isPackage: Boolean,
+        packageId: Int
+    ) {
         viewModelScope.launch {
-            adjustmentRepo.getUpdateInventory(token, productId,locationId,stockQuantityId,inventoryQuantity)
+            adjustmentRepo.getUpdateInventory(token, productId,locationId,stockQuantityId,inventoryQuantity,isPackage,packageId)
                 .onEach { dataState ->
                     inventoryAdjustmentUpdate.value = dataState
                 }.launchIn(viewModelScope)

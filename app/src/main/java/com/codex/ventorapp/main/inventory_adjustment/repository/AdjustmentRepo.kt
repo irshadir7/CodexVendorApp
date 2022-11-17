@@ -59,7 +59,7 @@ constructor(private val inventoryAdjustmentApi: InventoryAdjustmentApi) {
             val gson = Gson()
             val response: JsonObject =
                 inventoryAdjustmentApi.getBarCodeProduct(id, bearerToken, locationId)
-            Log.d("LocationID", locationId)
+            Log.d("LocationID", response.toString())
             val statusJson: Int = response.get("code").asInt
             val genericResponse: BarCodeList?
             if (statusJson == 200) {
@@ -88,7 +88,9 @@ constructor(private val inventoryAdjustmentApi: InventoryAdjustmentApi) {
         productId: String,
         locationId: String,
         stockQuantityId: String,
-        inventoryQuantity: String
+        inventoryQuantity: String,
+        isPackage: Boolean,
+        packageId: Int
     ): Flow<DataState<DataModel>> = flow {
         emit(DataState.Loading)
         try {
@@ -96,21 +98,23 @@ constructor(private val inventoryAdjustmentApi: InventoryAdjustmentApi) {
             Log.d("InventoryUpdate", bearerToken)
             Log.d("InventoryUpdate", productId)
             Log.d("InventoryUpdate", locationId)
-            Log.d("InventoryUpdate", inventoryQuantity)
+            Log.d("InventoryUpdate", isPackage.toString())
+            Log.d("InventoryUpdate", packageId.toString())
             val response: JsonObject = inventoryAdjustmentApi.getInventoryAdjustment(
                 bearerToken,
                 productId,
                 locationId,
                 stockQuantityId,
-                inventoryQuantity
+                inventoryQuantity,
+                isPackage,
+                packageId
             )
             Log.d("InventoryUpdate", response.toString())
             val statusJson: Int = response.get("code").asInt
             val genericResponse: DataModel?
             if (statusJson == 200) {
                 val message: String = response.get("message").asString
-                val status: String = response.get("status").asString
-                genericResponse = DataModel(statusJson, message, status.toInt())
+                genericResponse = DataModel(statusJson, message, statusJson)
                 emit(DataState.Success(genericResponse))
             } else {
                 val apiErrorModel: ErrorDataModel

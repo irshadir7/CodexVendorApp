@@ -1,5 +1,6 @@
 package com.codex.ventorapp.main.ui
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
@@ -22,6 +23,8 @@ import com.codex.ventorapp.main.login.intent.LoginIntent
 import com.codex.ventorapp.main.login.model.LoginSuccessData
 import com.codex.ventorapp.main.login.vm.LoginViewModel
 import com.codex.ventorapp.main.model.DataModel
+import com.codex.ventorapp.main.onboarding.DatabaseChooseActivity
+import com.codex.ventorapp.main.onboarding.OnBoardingActivity
 import com.codex.ventorapp.main.signup.intent.SignUpIntent
 import com.codex.ventorapp.main.signup.model.SignupSuccessModel
 import com.codex.ventorapp.main.signup.vm.SignUpViewModel
@@ -92,7 +95,10 @@ class MainActivity : BaseActivity() {
                     true
                 }
                 R.id.logout -> {
-                    Toast.makeText(this, "Logout", Toast.LENGTH_SHORT).show()
+                    session.clearSession()
+                    val intent = Intent(this@MainActivity, OnBoardingActivity::class.java)
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
+                    startActivity(intent)
                     true
                 }
                 else -> {
@@ -118,7 +124,6 @@ class MainActivity : BaseActivity() {
         }
         prepareItems()
         authRefresh()
-        authLogin()
     }
 
     private fun prepareItems() {
@@ -159,19 +164,6 @@ class MainActivity : BaseActivity() {
         }
 
         subscribeObservers()
-    }
-
-    private fun authLogin() {
-        lifecycleScope.launch {
-            loginViewModel.userIntent.send(
-                LoginIntent.GetLogin(
-                    "ashifpk1@gmail.com",
-                    "123"
-                )
-            )
-        }
-
-        subscribeObserversForLogin()
     }
 
 
@@ -215,33 +207,7 @@ class MainActivity : BaseActivity() {
     }
 
 
-    private fun subscribeObserversForLogin() {
-        loginViewModel.loginDataRead.observe(
-            this
-        ) { loginDataRead ->
-            when (loginDataRead) {
-                is DataState.Success<LoginSuccessData> -> {
-                    Log.d("LoginFlow", loginDataRead.data.toString())
-                    loginViewModel.loginDataRead.removeObservers(this)
-                    session.createLoginSession(loginDataRead.data)
-                }
-                is DataState.ServerError -> {
-                    Log.d("LoginFlow", loginDataRead.response.toString())
-                    loginViewModel.loginDataRead.removeObservers(this)
-                }
-                is DataState.Error -> {
-                    Log.d("LoginFlow", loginDataRead.exception.toString())
-                    loginViewModel.loginDataRead.removeObservers(this)
-                }
-                is DataState.Loading -> {
 
-                }
-                else -> {
-                    accessTokenViewModel.accessTokenRead.removeObservers(this)
-                }
-            }
-        }
-    }
 
     private fun subscribeObserversForSignUp() {
         signUpViewModel.signUpDataRead.observe(
@@ -279,11 +245,6 @@ class MainActivity : BaseActivity() {
             drawerLayout.openDrawer(navView)
         }
         return true
-    }
-
-    // override the onBackPressed() function to close the Drawer when the back button is clicked
-    override fun onBackPressed() {
-        super.onBackPressed()
     }
 
 }

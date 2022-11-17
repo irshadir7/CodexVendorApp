@@ -3,6 +3,8 @@ package com.codex.ventorapp.main.inventory_adjustment.ui
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.graphics.Color
+import android.media.RingtoneManager
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -25,7 +27,7 @@ import com.codex.ventorapp.main.location.intent.LocationIntent
 import com.codex.ventorapp.main.location.model.LocationList
 import com.codex.ventorapp.main.location.vm.LocationViewModel
 import com.codex.ventorapp.main.model.DataModel
-
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_inventory_adjustment.*
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -34,6 +36,7 @@ import kotlinx.coroutines.InternalCoroutinesApi
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 import kotlin.math.roundToInt
+
 
 @FlowPreview
 @ExperimentalCoroutinesApi
@@ -57,6 +60,9 @@ class InventoryAdjustmentActivity : BaseActivity() {
     private var locationId = ""
     private var locationIdSelected = false
     private var productId = ""
+    private var isPackage = false
+    private var packageId = 0
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_inventory_adjustment)
@@ -102,15 +108,19 @@ class InventoryAdjustmentActivity : BaseActivity() {
 
 
         }
-
+        Log.d("LocationList", locationId)
+        Log.d("LocationList", scannedValue)
         if (scannedValue.isNotEmpty() && locationId.isNotEmpty()) {
-            Log.d("LocationList", locationId)
             authBarCode(scannedValue, locationId)
         }
         btnClear.setOnClickListener {
             clearUI()
         }
         loading()
+
+        btnSearch.setOnClickListener {
+            authBarCode(edItemName.text.toString(), locationId)
+        }
     }
 
     private fun showDifferent(_counter: Int) {
@@ -182,7 +192,7 @@ class InventoryAdjustmentActivity : BaseActivity() {
                     inventoryListViewModel.adjustListRead.removeObservers(this)
                     stopLoading()
                 }
-                is DataState.ServerError->{
+                is DataState.ServerError -> {
                     stopLoading()
                 }
                 is DataState.Loading -> {
@@ -210,14 +220,33 @@ class InventoryAdjustmentActivity : BaseActivity() {
                 }
                 is DataState.Error -> {
                     Log.d("BarCodeList", barCodeRead.exception.toString())
+                    Toast.makeText(applicationContext, "Unknown Barcode", Toast.LENGTH_SHORT).show()
                     inventoryListViewModel.barCodeRead.removeObservers(this)
                     stopLoading()
+                    showAlert()
+                    try {
+                        val notification: Uri =
+                            RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION)
+                        val r = RingtoneManager.getRingtone(applicationContext, notification)
+                        r.play()
+                    } catch (e: Exception) {
+                        e.printStackTrace()
+                    }
                 }
                 is DataState.ServerError -> {
                     Log.d("BarCodeList", barCodeRead.response.toString())
-                    // Toast.makeText(applicationContext, barCodeRead.response.message, Toast.LENGTH_SHORT).show()
+                    Toast.makeText(applicationContext, "Unknown Barcode", Toast.LENGTH_SHORT).show()
+                    showAlert()
                     inventoryListViewModel.barCodeRead.removeObservers(this)
                     stopLoading()
+                    try {
+                        val notification: Uri =
+                            RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION)
+                        val r = RingtoneManager.getRingtone(applicationContext, notification)
+                        r.play()
+                    } catch (e: Exception) {
+                        e.printStackTrace()
+                    }
                 }
 
                 is DataState.Loading -> {
@@ -231,6 +260,17 @@ class InventoryAdjustmentActivity : BaseActivity() {
         }
     }
 
+   private fun showAlert() {
+        MaterialAlertDialogBuilder(this, R.style.AlertDialogTheme)
+            .setMessage("Shall i proceed to custom barcode search?")
+            .setTitle("Unknown barcode")
+            .setCancelable(false)
+            .setPositiveButton(resources.getString(R.string.yes)) { _, _ ->
+                rlSearchBarcode.isVisible = true
+            }
+            .show()
+    }
+
     private fun setBarCodeOutputUI(data: BarCodeList) {
         tvItemCode.text = scannedValue
         tvItemName.text = data.result.name
@@ -242,6 +282,8 @@ class InventoryAdjustmentActivity : BaseActivity() {
         qty_available.text = data.result.qty_available.toString()
         onHand = data.result.qty_available.roundToInt()
         authLocation(tokenValue)
+        isPackage = data.result.is_package
+        packageId = data.result.package_id
     }
 
 
@@ -249,7 +291,7 @@ class InventoryAdjustmentActivity : BaseActivity() {
         lifecycleScope.launch {
             inventoryListViewModel.userIntent.send(
                 InventoryAdjustmentIntent.GetUpdateInventory(
-                    tokenValue, productId, locationId, "", _counter.toString()
+                    tokenValue, productId, locationId, "", _counter.toString(), isPackage, packageId
                 )
             )
         }
@@ -268,6 +310,7 @@ class InventoryAdjustmentActivity : BaseActivity() {
                     inventoryListViewModel.inventoryAdjustmentRead.removeObservers(this)
                     Toast.makeText(applicationContext, "Stock Updated", Toast.LENGTH_SHORT).show()
                     clearUI()
+                    rlSearchBarcode.isVisible = false
                 }
                 is DataState.ServerError -> {
                     stopLoading()

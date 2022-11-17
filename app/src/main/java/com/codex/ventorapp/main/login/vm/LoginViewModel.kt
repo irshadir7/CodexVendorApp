@@ -34,6 +34,7 @@ class LoginViewModel constructor(
             userIntent.consumeAsFlow().collect {
                 when (it) {
                     is LoginIntent.GetLogin -> getLogin(
+                        it.db,
                         it.login,
                         it.password
                     )
@@ -43,9 +44,9 @@ class LoginViewModel constructor(
     }
 
     //As a result, the ViewModel updates the View with new states and is then displayed to the user.
-    private fun getLogin(login: String, password: String) {
+    private fun getLogin(db: String,login: String, password: String) {
         viewModelScope.launch {
-            loginRepo.getLogin(login, password)
+            loginRepo.getLogin(db,login, password)
                 .onEach { dataState ->
                     loginDataUpdate.value = dataState
                 }.launchIn(viewModelScope)

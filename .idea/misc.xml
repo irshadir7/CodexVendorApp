@@ -15,6 +15,7 @@
         <entry key="..\:/Users/OMER/AndroidStudioProjects/End/app/src/main/res/layout/toast_message.xml" value="0.12708333333333333" />
         <entry key="..\:/Users/OMER/AndroidStudioProjects/End/app/src/main/res/layout/wish_list_fragment.xml" value="0.12708333333333333" />
         <entry key="..\:/Users/OMER/AndroidStudioProjects/End/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.25" />
+        <entry key="..\:/Users/mpirs/AppData/Local/Android/Sdk/platforms/android-32/data/res/layout/simple_spinner_item.xml" value="0.2734375" />
         <entry key="..\:/Users/mpirs/StudioProjects/End/app/src/main/res/drawable/page_about__state_default.xml" value="0.1" />
         <entry key="..\:/Users/mpirs/StudioProjects/End/app/src/main/res/layout/activity_main.xml" value="0.19610507246376813" />
         <entry key="..\:/Users/mpirs/StudioProjects/End/app/src/main/res/layout/cart_fragment.xml" value="0.19610507246376813" />
@@ -24,6 +25,7 @@
         <entry key="..\:/Users/mpirs/StudioProjects/End/app/src/main/res/layout/product_list_fragment.xml" value="0.19610507246376813" />
         <entry key="..\:/Users/mpirs/StudioProjects/End/app/src/main/res/layout/toast_message.xml" value="0.19610507246376813" />
         <entry key="..\:/Users/mpirs/StudioProjects/VentorApp/app/src/main/res/drawable-v24/ic_camera_app.xml" value="0.2045" />
+        <entry key="..\:/Users/mpirs/StudioProjects/VentorApp/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2065" />
         <entry key="..\:/Users/mpirs/StudioProjects/VentorApp/app/src/main/res/drawable-v24/table_content_cell_bg.xml" value="0.2045" />
         <entry key="..\:/Users/mpirs/StudioProjects/VentorApp/app/src/main/res/drawable/baseline_calendar_today.xml" value="0.164" />
         <entry key="..\:/Users/mpirs/StudioProjects/VentorApp/app/src/main/res/drawable/baseline_qr_code_scanner.xml" value="0.164" />
@@ -32,6 +34,7 @@
         <entry key="..\:/Users/mpirs/StudioProjects/VentorApp/app/src/main/res/drawable/baseline_settings.xml" value="0.164" />
         <entry key="..\:/Users/mpirs/StudioProjects/VentorApp/app/src/main/res/drawable/ic_camera_app.xml" value="0.2045" />
         <entry key="..\:/Users/mpirs/StudioProjects/VentorApp/app/src/main/res/drawable/ic_codex_logo_file.xml" value="0.1525" />
+        <entry key="..\:/Users/mpirs/StudioProjects/VentorApp/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2065" />
         <entry key="..\:/Users/mpirs/StudioProjects/VentorApp/app/src/main/res/drawable/ic_login_black.xml" value="0.164" />
         <entry key="..\:/Users/mpirs/StudioProjects/VentorApp/app/src/main/res/drawable/ic_powered_by.xml" value="0.2045" />
         <entry key="..\:/Users/mpirs/StudioProjects/VentorApp/app/src/main/res/drawable/outline_account_circle.xml" value="0.164" />
@@ -57,6 +60,7 @@
         <entry key="..\:/Users/mpirs/StudioProjects/VentorApp/app/src/main/res/layout/activity_purchase.xml" value="0.2734375" />
         <entry key="..\:/Users/mpirs/StudioProjects/VentorApp/app/src/main/res/layout/activity_recipt.xml" value="0.26979166666666665" />
         <entry key="..\:/Users/mpirs/StudioProjects/VentorApp/app/src/main/res/layout/activity_return.xml" value="0.2557291666666667" />
+        <entry key="..\:/Users/mpirs/StudioProjects/VentorApp/app/src/main/res/layout/activity_scan.xml" value="0.2734375" />
         <entry key="..\:/Users/mpirs/StudioProjects/VentorApp/app/src/main/res/layout/barcode_layout.xml" value="0.2734375" />
         <entry key="..\:/Users/mpirs/StudioProjects/VentorApp/app/src/main/res/layout/delivery_toolbar.xml" value="0.26979166666666665" />
         <entry key="..\:/Users/mpirs/StudioProjects/VentorApp/app/src/main/res/layout/dialog.xml" value="0.26979166666666665" />
@@ -68,11 +72,13 @@
         <entry key="..\:/Users/mpirs/StudioProjects/VentorApp/app/src/main/res/layout/receipt_item_list.xml" value="0.26979166666666665" />
         <entry key="..\:/Users/mpirs/StudioProjects/VentorApp/app/src/main/res/layout/receipt_toolbar.xml" value="0.26979166666666665" />
         <entry key="..\:/Users/mpirs/StudioProjects/VentorApp/app/src/main/res/layout/return_toolbar.xml" value="0.26979166666666665" />
+        <entry key="..\:/Users/mpirs/StudioProjects/VentorApp/app/src/main/res/layout/spinner_item.xml" value="0.2734375" />
         <entry key="..\:/Users/mpirs/StudioProjects/VentorApp/app/src/main/res/layout/table_list_item.xml" value="0.2734375" />
         <entry key="..\:/Users/mpirs/StudioProjects/VentorApp/app/src/main/res/layout/toolbar_inventory.xml" value="0.26979166666666665" />
         <entry key="..\:/Users/mpirs/StudioProjects/VentorApp/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.2734375" />
         <entry key="..\:/Users/mpirs/StudioProjects/VentorApp/app/src/main/res/menu/drawer_list.xml" value="0.2734375" />
         <entry key="..\:/Users/mpirs/StudioProjects/VentorApp/app/src/main/res/menu/nav_header.xml" value="0.2734375" />
+        <entry key="..\:/Users/mpirs/StudioProjects/VentorApp/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2065" />
       </map>
     </option>
   </component>

@@ -2,6 +2,7 @@ package com.codex.ventorapp.foundatiion.utilz
 
 import android.content.Context
 import android.content.SharedPreferences
+import com.codex.ventorapp.BuildConfig
 import com.codex.ventorapp.main.accessToken.model.AccessTokenModel
 import com.codex.ventorapp.main.login.model.LoginSuccessData
 import kotlin.collections.HashMap
@@ -20,7 +21,7 @@ class SessionManager(var context: Context) {
     }
 
     companion object {
-
+        const val BASE_URL: String = "base_url"
         const val PREF_NAME: String = "Vendor"
         const val IS_LOGIN: String = "isLogin"
         const val PARTNER_ID: String = "partner_id"
@@ -28,6 +29,9 @@ class SessionManager(var context: Context) {
         const val TOKEN_EXPIRY: String = "token_expiry"
         const val USER_TOKEN: String = "user_token"
         const val USER_TOKEN_EXPIRY: String = "user_token_expiry"
+        const val DATABASE: String = "database"
+        const val URL_SAVED: String = "url_saved"
+
     }
 
     fun createLoginSession(data: LoginSuccessData) {
@@ -65,4 +69,30 @@ class SessionManager(var context: Context) {
         editor.commit()
     }
 
+    fun saveBaseURL(url: String) {
+        editor.putBoolean(URL_SAVED, true)
+        editor.putString(BASE_URL, url)
+        editor.commit()
+    }
+
+    fun isUrlSaved(): Boolean {
+        return pref.getBoolean(URL_SAVED, false)
+    }
+
+    fun getBaseURL(): String {
+        return pref.getString(BASE_URL, BuildConfig.BASE_URL).toString()
+    }
+
+    fun saveDb(db: String) {
+        editor.putString(DATABASE, db)
+        editor.commit()
+    }
+
+    fun getDataBase(): String {
+        return pref.getString(DATABASE, "codex_app_development").toString()
+    }
+    fun clearSession() {
+        editor.clear()
+        editor.commit()
+    }
 }

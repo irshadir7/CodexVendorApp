@@ -11,17 +11,11 @@ import com.codex.ventorapp.R
 import com.codex.ventorapp.foundatiion.mvi.BaseActivity
 import com.codex.ventorapp.foundatiion.utilz.DataState
 import com.codex.ventorapp.foundatiion.utilz.SessionManager
-import com.codex.ventorapp.main.inventory_adjustment.adapter.TableViewAdapter
-import com.codex.ventorapp.main.inventory_adjustment.intent.InventoryAdjustmentIntent
-import com.codex.ventorapp.main.inventory_adjustment.model.AdjustList
-import com.codex.ventorapp.main.inventory_adjustment.ui.InventoryAdjustmentActivity
-import com.codex.ventorapp.main.inventory_adjustment.vm.InventoryAdjustmentViewModel
 import com.codex.ventorapp.main.purchase.adapter.PurchaseOrderTableAdapter
 import com.codex.ventorapp.main.purchase.intent.PurchaseOrderIntent
 import com.codex.ventorapp.main.purchase.model.PurchaseOrder
 import com.codex.ventorapp.main.purchase.vm.PurchaseViewModel
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.android.synthetic.main.activity_inventory_adjustment.*
 import kotlinx.android.synthetic.main.activity_purchase.*
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.FlowPreview

@@ -79,6 +79,8 @@ class PhotoAdapter(var context: Context) : RecyclerView.Adapter<PhotoAdapter.Vie
             }
             if(data.id==11){
                 val intent = Intent(context, InventoryAdjustmentActivity::class.java)
+                intent.putExtra("scannedValue", "")
+                intent.putExtra("locationId", "")
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
                 context.startActivity(intent)
             }

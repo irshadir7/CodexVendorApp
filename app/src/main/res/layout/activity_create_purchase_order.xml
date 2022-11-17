@@ -5,15 +5,95 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/white"
     tools:context=".main.purchase.ui.CreatePurchaseOrderActivity">
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/_10sdp">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="@dimen/_80sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_alignParentStart="true"
+            android:layout_gravity="center"
+
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:background="@drawable/rounded_corners_btn"
+            android:gravity="center"
+            android:text="Save"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_14sdp"
+            android:textStyle="bold" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="@dimen/_80sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_gravity="center"
+             android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="Discard"
+            android:textAllCaps="true"
+            android:textStyle="bold"
+            android:textColor="@color/grey"
+            android:textSize="@dimen/_14sdp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/createBtn"
+            android:layout_width="@dimen/_80sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="center"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:gravity="center"
+            android:text="Draft"
+            android:textAllCaps="true"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14sdp" />
+
+
+    </RelativeLayout>
+
+
+
+    <RelativeLayout
+        android:id="@+id/menuToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/dark_blue"
+        android:orientation="horizontal"
+        android:padding="@dimen/_10sdp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:text="Vendor Details"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_15sdp"
+            android:textStyle="bold"
+            tools:ignore="HardcodedText" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/ic_camera_app"
+            tools:ignore="HardcodedText" />
+    </RelativeLayout>
+
 
     <LinearLayout
         android:id="@+id/llFirst"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/_10sdp"
-        android:layout_marginEnd="@dimen/_10sdp"
-        android:layout_marginBottom="@dimen/_5sdp"
+        android:padding="@dimen/_10sdp"
         android:weightSum="2">
 
         <androidx.appcompat.widget.AppCompatTextView
@@ -46,24 +126,23 @@
         android:id="@+id/llSecond"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/_10sdp"
-        android:layout_marginEnd="@dimen/_10sdp"
-        android:layout_marginBottom="@dimen/_5sdp"
+        android:padding="@dimen/_10sdp"
         android:weightSum="4">
 
         <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="0dp"
-            android:layout_height="@dimen/_25sdp"
+            android:layout_height="match_parent"
             android:layout_gravity="center"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="Unit:"
+            android:text="Date:"
             android:textColor="@color/black"
             android:textSize="@dimen/_12sdp"
             android:textStyle="bold"
             tools:ignore="HardcodedText" />
 
         <androidx.appcompat.widget.AppCompatTextView
+          android:id="@+id/tvDate"
             android:layout_width="0dp"
             android:layout_height="@dimen/_25sdp"
             android:layout_gravity="center"
@@ -80,14 +159,14 @@
             android:layout_gravity="center"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="Location:"
+            android:text="R Date"
             android:textColor="@color/black"
             android:textSize="@dimen/_12sdp"
             android:textStyle="bold"
             tools:ignore="HardcodedText" />
 
-        <androidx.appcompat.widget.AppCompatSpinner
-            android:id="@+id/spinnerLocation"
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvRDate"
             android:layout_width="0dp"
             android:layout_height="@dimen/_25sdp"
             android:layout_gravity="center"
@@ -105,9 +184,7 @@
         android:id="@+id/llThird"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/_10sdp"
-        android:layout_marginEnd="@dimen/_10sdp"
-        android:layout_marginBottom="@dimen/_5sdp"
+        android:padding="@dimen/_10sdp"
         android:weightSum="4">
 
         <androidx.appcompat.widget.AppCompatTextView
@@ -116,7 +193,7 @@
             android:layout_gravity="center"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="On Hand:"
+            android:text="Ref:"
             android:textColor="@color/black"
             android:textSize="@dimen/_12sdp"
             android:textStyle="bold"
@@ -124,7 +201,7 @@
 
         </androidx.appcompat.widget.AppCompatTextView>
 
-        <androidx.appcompat.widget.AppCompatTextView
+        <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/qty_available"
             android:layout_width="0dp"
             android:layout_height="@dimen/_25sdp"
@@ -142,7 +219,7 @@
             android:layout_gravity="center"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="Difference:"
+            android:text="WH:"
             android:textColor="@color/black"
             android:textSize="@dimen/_12sdp"
             android:textStyle="bold" />
@@ -159,5 +236,134 @@
             android:textSize="@dimen/_12sdp"
             android:textStyle="bold" />
     </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
 
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:background="@color/grey">
+
+    </View>
+
+    <RelativeLayout
+        android:id="@+id/barcodeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_10sdp">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/tvItemScannedCode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginEnd="@dimen/_60sdp"
+            android:background="@drawable/rounded_corners_gray"
+            android:padding="@dimen/_10sdp"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12sdp"
+            android:textStyle="bold">
+
+        </androidx.appcompat.widget.AppCompatEditText>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/barcodeScan"
+            android:layout_width="@dimen/_60sdp"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="0dp"
+            app:srcCompat="@drawable/ic_camera_app">
+
+        </androidx.appcompat.widget.AppCompatImageView>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="3">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="QTY:"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12sdp"
+            android:textStyle="bold"
+            tools:ignore="HardcodedText">
+
+        </androidx.appcompat.widget.AppCompatTextView>
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="UOM:"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12sdp"
+            android:textStyle="bold" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Price:"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12sdp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="3">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvQty"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_margin="@dimen/_3sdp"
+            android:background="@drawable/rounded_corners_gray"            android:textColor="@color/black"
+            android:textSize="@dimen/_12sdp"
+            android:textStyle="bold"
+            tools:ignore="HardcodedText">
+
+        </androidx.appcompat.widget.AppCompatTextView>
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:layout_margin="@dimen/_3sdp"
+            android:gravity="center"
+            android:background="@drawable/rounded_corners_gray"            android:textColor="@color/black"
+            android:textSize="@dimen/_12sdp"
+            android:textStyle="bold" />
+        <androidx.appcompat.widget.AppCompatTextView
+           android:id="@+id/tvPrice"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_margin="@dimen/_3sdp"
+            android:background="@drawable/rounded_corners_gray"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12sdp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
 </LinearLayout>

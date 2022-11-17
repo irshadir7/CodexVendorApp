@@ -1,9 +1,12 @@
 package com.codex.ventorapp.di
 
 
+import android.annotation.SuppressLint
+import android.app.Application
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.codex.ventorapp.BuildConfig
+import com.codex.ventorapp.foundatiion.utilz.SessionManager
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -22,6 +25,9 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 object NetworkModule {
+    @SuppressLint("StaticFieldLeak")
+    lateinit var session: SessionManager
+    lateinit var application: Application
 
     @Singleton
     @Provides
@@ -33,15 +39,17 @@ object NetworkModule {
 
     @Singleton
     @Provides
-    fun provideRetrofit(gson: Gson): Retrofit.Builder{
-        val logging =  HttpLoggingInterceptor()
-        logging.level = HttpLoggingInterceptor.Level.NONE
-        val httpClient =  OkHttpClient.Builder()
+    fun provideRetrofit(gson: Gson): Retrofit.Builder {
+        val logging = HttpLoggingInterceptor()
+        logging.level = HttpLoggingInterceptor.Level.BASIC
+        val httpClient = OkHttpClient.Builder()
         httpClient.addInterceptor(logging)
         httpClient.connectTimeout(300, TimeUnit.SECONDS)
         httpClient.readTimeout(300, TimeUnit.SECONDS)
+        session = SessionManager(application)
+
         return Retrofit.Builder()
-            .baseUrl(BuildConfig.BASE_URL)
+            .baseUrl(session.getBaseURL())
             .addConverterFactory(GsonConverterFactory.create(gson))
             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
             .client(httpClient.build())

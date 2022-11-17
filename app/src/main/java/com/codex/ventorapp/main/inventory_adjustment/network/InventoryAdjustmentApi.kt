@@ -25,6 +25,8 @@ interface InventoryAdjustmentApi {
         @Query("product_id") product_id: String,
         @Query("location_id") location_id: String,
         @Query("stock_quant_id") stock_quantity_id: String,
-        @Query("inventory_quantity") inventory_quantity: String
+        @Query("inventory_quantity") inventory_quantity: String,
+        @Query("is_package") is_package: Boolean,
+        @Query("package_id") package_id: Int
     ): JsonObject
 }

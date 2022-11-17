@@ -13,12 +13,13 @@ import javax.inject.Inject
 class LoginRepo
 @Inject
 constructor(private val loginAPI: LoginApi){
-    fun getLogin(login: String, password: String): Flow<DataState<LoginSuccessData>> = flow {
+    fun getLogin(db: String,login: String, password: String): Flow<DataState<LoginSuccessData>> = flow {
         try {
             val apiErrorModel: ErrorDataModel
-            val response: JsonObject = loginAPI.getLogin(login,password)
+            val response: JsonObject = loginAPI.getLogin(db,login,password)
             val statusJson: Int = response.get("code").asInt
             val genericResponse: LoginSuccessData?
+            Log.d("LoginResponse",db)
             if (statusJson == 200) {
                 val accessToken: String = response.get("access_token").asString
                 val message: String = response.get("message").asString
@@ -29,7 +30,9 @@ constructor(private val loginAPI: LoginApi){
                 emit(DataState.Success(genericResponse))
             }
             if (statusJson == 401) {
-                apiErrorModel = ErrorDataModel(statusJson, "","")
+                val message: String = response.get("message").asString
+                val status: String = response.get("status").asString
+                apiErrorModel = ErrorDataModel(statusJson, message,status)
                 emit(DataState.ServerError(apiErrorModel))
             }
 

@@ -81,40 +81,28 @@
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/_50sdp"
-                        android:paddingStart="@dimen/_2sdp"
-                        android:paddingEnd="@dimen/_2sdp"
+                        android:padding="@dimen/_5sdp"
+                        android:background="@drawable/rounded_corners_gray"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent">
 
-                        <com.google.android.material.textfield.TextInputLayout
+                        <androidx.appcompat.widget.AppCompatSpinner
+                            android:id="@+id/spinnerDatabase"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="Select Database"
-                            android:textColorHint="@color/black"
-                            app:boxStrokeWidth="0dp"
-                            app:boxStrokeWidthFocused="0dp"
-                            app:hintTextColor="@color/black"
-                            app:layout_constraintTop_toTopOf="parent">
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:textColor="@color/black"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            android:textSize="@dimen/_12sdp"
+                            android:textStyle="bold" />
 
-                            <com.google.android.material.textfield.TextInputEditText
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:background="@drawable/rounded_corners_gray"
-                                android:fontFamily="@font/roboto_regular"
-                                android:lines="1"
-                                android:maxLines="1"
-                                android:paddingStart="@dimen/_16sdp"
-                                android:paddingEnd="@dimen/_16sdp"
-                                android:singleLine="true"
-                                android:textColor="@color/black"
-                                android:textSize="@dimen/_12sdp"
-                                app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintHorizontal_bias="0.0"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent"
-                                tools:text="omer_khan20@hotmail.com" />
-                        </com.google.android.material.textfield.TextInputLayout>
+
                     </androidx.constraintlayout.widget.ConstraintLayout>
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -148,6 +136,7 @@
                             app:layout_constraintTop_toTopOf="parent">
 
                             <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/tvUserName"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:background="@drawable/rounded_corners_gray"
@@ -198,6 +187,7 @@
                             app:layout_constraintTop_toTopOf="parent">
 
                             <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/tvPassword"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:background="@drawable/rounded_corners_gray"

@@ -14,7 +14,7 @@ data class ResultBarCode(
     val invoice_policy: String,
     val is_package: Boolean,
     val name: String,
-    val package_id:Boolean,
+    val package_id:Int,
     val product_category: String,
     val product_category_id: Int,
     val product_type: String,
